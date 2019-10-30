@@ -1,4 +1,5 @@
 // Package db provide PostgreSQL storage for application data repositories.
+// docker run -d -it -p 5432:5432 -e POSTGRES_USER=user -e POSTGRES_PASSWORD=pass -e POSTGRES_DB=db postgres:9.6
 package db
 
 import (

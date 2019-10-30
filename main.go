@@ -30,10 +30,10 @@ func (d dbLogger) AfterQuery(c context.Context, q *pg.QueryEvent) error {
 var (
 	flagHttpAddr = flag.String("http_address", "0.0.0.0:8080", "Http address for web server running")
 
-	flagDBAddr     = flag.String("db_address", "localhost:5432", "Address to connect to PostgreSQL server")
-	flagDBUser     = flag.String("db_user", "postgres", "PostgreSQL connection user")
-	flagDBPassword = flag.String("db_password", "", "PostgreSQL connection password")
-	flagDBDatabase = flag.String("database", "payments", "PostgreSQL database name")
+	flagDBAddr     = flag.String("db_address", "127.0.0.1:5432", "Address to connect to PostgreSQL server")
+	flagDBUser     = flag.String("db_user", "user", "PostgreSQL connection user")
+	flagDBPassword = flag.String("db_password", "pass", "PostgreSQL connection password")
+	flagDBDatabase = flag.String("database", "db", "PostgreSQL database name")
 	flagDBAppName  = flag.String("app_name", "payments", "PostgreSQL application name (for logging)")
 	flagDBPoolSize = flag.Int("pool_size", 10, "PostgreSQL connection pool size")
 	flagDBLog = flag.Bool("db_log", false, "Switch for statements logging")
