@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"../errs"
+	"awesomeProject1/errs"
 	"github.com/shopspring/decimal"
 
 	"github.com/asaskevich/govalidator"

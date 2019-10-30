@@ -2,16 +2,15 @@
 package db
 
 import (
-	"github.com/Otetz/payments/payment"
+	"awesomeProject1/account"
+	"awesomeProject1/errs"
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
-	"../account"
-	"../errs"
 )
 
 // CreateSchema creating schema if its not exist. Without any migrations mechanic, just schema only.
 func CreateSchema(conn *pg.DB) error {
-	for _, model := range []interface{}{(*account.Account)(nil), (*payment.Payment)(nil)} {
+	for _, model := range []interface{}{(*account.Account)(nil)} {
 		err := conn.CreateTable(model, &orm.CreateTableOptions{
 			IfNotExists: true,
 		})

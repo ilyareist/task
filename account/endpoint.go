@@ -5,7 +5,7 @@ import (
 
 	"github.com/asaskevich/govalidator"
 
-	"../errs"
+	"awesomeProject1/errs"
 
 	"github.com/go-kit/kit/endpoint"
 	"github.com/shopspring/decimal"

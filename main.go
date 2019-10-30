@@ -4,17 +4,16 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"github.com/Otetz/payments/payment"
 	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
 
+	"awesomeProject1/db"
 	"github.com/go-pg/pg"
-	"./db"
 
+	"awesomeProject1/account"
 	"github.com/go-kit/kit/log"
-	"./account"
 )
 
 type dbLogger struct{}
@@ -64,7 +63,7 @@ func main() {
 	mux := http.NewServeMux()
 
 	mux.Handle("/api/accounts/v1/", account.MakeHandler(as, httpLogger))
-	mux.Handle("/api/payments/v1/", payment.MakeHandler(ps, httpLogger))
+
 
 	http.Handle("/", accessControl(mux))
 
